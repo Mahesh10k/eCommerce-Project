@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-image: url("./images/shopping-bag-cart.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100vw 200vh;
+  background-attachment: fixed;
+}
+
+/* Navbar Styling */
+.navbar {
+  position: sticky;
+  top: 0px;
+  margin-bottom: 30px;
+  background-color: #257180;
+  padding: 1rem;
+  z-index: 10;
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.nav-link {
+  cursor: pointer;
+  list-style-type: none;
+  color: #fff !important;
+  margin: 0 0.5rem;
+}
+.nav-link:hover ,.nav-item:hover{
+  scale: 1.05;
+  font-weight: 500;
+  color: #00bcd4 !important;
+  cursor: pointer;
+}
+.nav-item {
+  list-style-type: none;
+}
+
+/* Hero Section */
+#home-content {
+  margin-top: 13%;
+  margin-left: 8vw;
+}
+#home-content > h1 {
+  font-stretch: ultra-expanded;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-shadow: 3px 3px 4px gray;
+  font-size: 4.5rem;
+  margin-bottom: 20px;
+  color: #257180;
+}
+
+#home-content > button ,#backtoHome{
+  color: white;
+  background-color: #257180;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#home-content > button:hover ,#backtoHome:hover{
+  color: #257180;
+  background-color: white;
+}
+
+/* Product Cards */
+#productsDiv, #cartDiv {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px;
+}
+#addToCart:hover {
+  background-color: black;
+  color: white;
+}
+#card {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 3px 3px 3px gray;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 230px;
+  text-align: center;
+  padding: 10px;
+}
+#card:hover{
+  scale: 1.05;
+}
+#card > button {
+  /* margin-top: 5px; */
+  background-color: #257180;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#card img {
+  max-height: 190px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+#card img:hover{
+  scale: 1.05;
+}
+#card h3 {
+  font-size: 0.7rem;
+  margin-bottom: 10px;
+}
+#card button:hover {
+  background-color: #00bcd4;
+}
+
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #257180;
+  color: white;
+  margin-top: 20px;
+}

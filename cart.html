@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="cartDiv"></div>
+    <button id="backtoHome">Home</button>
+
+ <script>
+
+   document.addEventListener("DOMContentLoaded", () => {
+   const cartContainer = document.getElementById("cartDiv");
+   const cartData = JSON.parse(localStorage.getItem("cart")) || [];
+   // console.log(cartData);
+  
+  if (cartData.length === 0) {
+    cartContainer.innerHTML = "<h3>Your cart is empty.</h3>";
+    return;
+  }
+
+   cartData.forEach((x,index) => {
+   let card=document.createElement("div")
+    card.id="card"
+      card.innerHTML += 
+       `<img src="${x.Image}">
+        <h3 style="text-align:center;font-size:0.7rem;height:25%; margin-top:1%">${x.Brand}</h3>
+        <h3 style="text-align:center;font-size:0.9rem;font-weight:bold;margin-top:1%">Price: ${x.Price}</h3>
+        <button id="remove">Remove</button>
+        <button style="margin-top:1%" id="buyNow">Buy Now</button>`;
+        cartContainer.append(card)
+
+        //remove cart process
+        card.querySelector("#remove").addEventListener("click",()=>{
+            if(confirm("Are you sure to want to remove the item")){
+             card.remove();
+             cartData.splice(index,1)
+            if(cartData.length===0){
+                cartContainer.innerHTML="<h3>Your Cart is Empty</h3>"
+            }
+        }
+          localStorage.setItem("cart",JSON.stringify(cartData))
+        })
+
+        // buyNow process
+        card.querySelector("#buyNow").addEventListener("click",()=>{
+            if(confirm("Are you sure to want to Buy the Item")){
+                alert("Your Order placed Successfully !")
+                card.remove()
+                cartData.splice(index,1)
+                if(cartData.length===0){
+                    cartContainer.innerHTML="<h3>Your Cart is Empty</h3>"
+                }
+            }
+          localStorage.setItem("cart",JSON.stringify(cartData))
+        })
+    })
+    })
+
+    
+    let backtoHome=document.getElementById("backtoHome");
+    backtoHome.addEventListener("click",()=>{
+        window.location.href="index.html"
+    })
+ 
+</script>
+
+    <script src="Electronics.js"></script>
+</body>
+</html>
