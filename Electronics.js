@@ -7,14 +7,16 @@ document.querySelectorAll(".nav-item").forEach((link) => {
   });
 });
 
+let Home=document.querySelector("section")
+let productsDiv=document.getElementById("productsDiv")
+
 //home clicking function
 function home() {
-  document.getElementById("home-content").style.display = "block";
-  document.getElementById("productsDiv").innerHTML = "";
+  Home.style.display = "block";
+  productsDiv.innerHTML = "";
 }
 
 var allData=[]
-let productsDiv=document.getElementById("productsDiv")
 
 // cards Display
 function display(allData) {
@@ -25,8 +27,8 @@ function display(allData) {
     card.id="card"
     card.innerHTML=
     ` <img src="${x.Image}" style="width:95%; height:70%; display:block; margin:0px auto">
-      <h3 style="text-align:center;font-size:0.7rem;height:25%; margin-top:1%">${x.Brand}</h3>
-      <h3 style="text-align:center;font-size:0.9rem;;font-weight:bold;margin-top:1%">Price: ${x.Price}</h3>
+      <h3 style="margin-top:2%">${x.Brand}</h3>
+      <h3><b>Price: ${x.Price}</b></h3>
       <button class="btn btn-success" id="addToCart">Add to Cart</button`
       productsDiv.appendChild(card);
 
@@ -36,7 +38,6 @@ function display(allData) {
   })
   
 }
-
 
 
 // mobiles api
@@ -49,15 +50,23 @@ const options1 = {
   },
 };
 
-async function getMobiles() {
+let getMobilesBtn=document.querySelectorAll('[id="getMobiles"]')
+let getLaptopsBtn=document.querySelectorAll('[id="getLaptops"]')
+let getWatchesBtn=document.querySelectorAll('[id="getWatches"]')
+let getFootwearBtn=document.querySelectorAll('[id="getFootwear"]')
+let getMensWearBtn=document.querySelectorAll('[id="getMensWear"]')
+
+async function getMobiles(event) {
+  event.preventDefault;
   try {
     if(localStorage.getItem("isLoggedIn") === "true") {
-      document.getElementById("home-content").style.display = "none";
+      Home.style.display = "none";
      
     const response1 = await fetch(url1, options1);
     const mobiles = await response1.json();
     allData=mobiles;
-    display(mobiles)
+    display(allData)
+    // console.log(allData)
     // performSearch(allData);
      
     } else {
@@ -68,6 +77,7 @@ async function getMobiles() {
     console.log(error);
   }
 }
+getMobilesBtn.forEach(x=>{x.addEventListener("click",getMobiles)});
 
 // Laptops api
 const url2 = "https://ecommerce-api3.p.rapidapi.com/laptops";
@@ -79,10 +89,12 @@ const options2 = {
   },
 };
 
-async function getLaptops() {
+
+async function getLaptops(event) {
+  event.preventDefault;
   try {
     if(localStorage.getItem("isLoggedIn") === "true") {
-      document.getElementById("home-content").style.display = "none";
+      Home.style.display = "none";
       const response2 = await fetch(url2, options2);
       const Laptops = await response2.json();
       allData=Laptops;
@@ -97,6 +109,7 @@ async function getLaptops() {
     console.log(error);
   }
 }
+getLaptopsBtn.forEach(x=>{x.addEventListener("click",getLaptops)});
 
 // Watches api
 const url3 = "https://ecommerce-api3.p.rapidapi.com/watches";
@@ -108,10 +121,11 @@ const options3 = {
   },
 };
 
-async function getWatches() {
+async function getWatches(event) {
+  event.preventDefault;
   try {
     if (localStorage.getItem("isLoggedIn") === "true") {
-      document.getElementById("home-content").style.display = "none";
+      Home.style.display = "none";
     const response3 = await fetch(url3, options3);
     const Watches = await response3.json();
     allData=Watches;
@@ -126,6 +140,7 @@ async function getWatches() {
     console.log(error);
   }
 }
+getWatchesBtn.forEach(x=>{x.addEventListener("click",getWatches)});
 
 // Footwear api
 const url4 = "https://ecommerce-api3.p.rapidapi.com/malefootwear";
@@ -137,15 +152,15 @@ const options4 = {
   },
 };
 
-async function getFootwear() {
+async function getFootwear(event) {
+  event.preventDefault;
   try {
     if (localStorage.getItem("isLoggedIn") === "true") {
-      document.getElementById("home-content").style.display = "none";
+      Home.style.display = "none";
     const response4 = await fetch(url4, options4);
     const  Footwear= await response4.json();
     allData=Footwear;
-    console.log(allData);
-      
+    // console.log(allData);
         display(allData);
         // performSearch(allData)
     } else {
@@ -156,6 +171,7 @@ async function getFootwear() {
     console.log(error);
   }
 }
+getFootwearBtn.forEach(x=>{x.addEventListener("click",getFootwear)});
 
 // MensWear api
 const url5 = "https://ecommerce-api3.p.rapidapi.com/menswear";
@@ -167,10 +183,11 @@ const options5 = {
   },
 };
 
-async function getMensWear() {
+async function getMensWear(event) {
+  event.preventDefault;
   try {
     if (localStorage.getItem("isLoggedIn") === "true") {
-      document.getElementById("home-content").style.display = "none";
+      Home.style.display = "none";
     const response5 = await fetch(url5, options5);
     const mensWear = await response5.json();
     allData=mensWear;
@@ -185,33 +202,29 @@ async function getMensWear() {
     console.log(error);
   }
 }
+getMensWearBtn.forEach(x=>{x.addEventListener("click",getMensWear)});
 
 //search function
-function performSearch() {
+function performSearch(event) {
+  event.preventDefault;
   if (localStorage.getItem("isLoggedIn") === "true") {
-    // getMobiles();
-    // getLaptops();
-    // getMensWear();
-    // getWatches();
-    // getFootwear();
     let keyword = document.getElementById("search").value.toLowerCase().trim();
-    document.getElementById("home-content").style.display = "none";
+     Home.style.display = "none";
 
     if (keyword == "") {
       productsDiv.innerHTML = "Please Enter the Keyword to Search";
       return;
     }
 
-    // Filter products
+    // Filter products of saerch keyword
     const filteredProducts = allData.filter((product) =>
         product.Brand.toLowerCase().includes(keyword) ||
-        product.Description.toLowerCase().includes(keyword) ||
-        product.Price <= keyword);
+        product.Description.toLowerCase().includes(keyword) )
+        console.log(filteredProducts)
     if (filteredProducts.length === 0) {
       productsDiv.innerHTML = `<p>No products found for "${keyword}".</p>`;
       return;
     }
-    // Render filtered products
       display(filteredProducts);
   } else {
     alert("Please login to view products.");
@@ -224,17 +237,15 @@ function performSearch() {
 //add to cart process
 function addToCart(item) {
     let cartData = JSON.parse(localStorage.getItem("cart")) || []; // Load cart from localStorage
-    if (!cartData.includes(item)) {
+    if (cartData.indexOf(item)==-1) {
       cartData.push(item);
       alert(`${item.Brand} has been added to your cart!`);
-      localStorage.setItem("cart", JSON.stringify(cartData));   // Save to localStorage
+      localStorage.setItem("cart", JSON.stringify(cartData));   // Save cart to localStorage
     }
     else {
      alert(`${item.Brand} is already in your cart!`);
    }
 }
-
-
 
 
 // View cart process
@@ -244,19 +255,7 @@ function viewCart() {
   } else {
     alert("Please login to view your cart.");
     window.location.href="login.html"
-    // return;
   }
 }
 
-//buy Now process
-function buyNow(Title, price) { 
-  const cartContainer = document.getElementById("cart");
-  if(confirm("Are you sure to want to Buy the item")){
-    cartContainer.style.display = "none";
-    alert("Order is in Progress");
-    setTimeout(() => {
-      alert(`You have Successfully Ordered the product of ${Title} worth of ${price}`);
-      cartContainer.style.display = "flex";
-    }, 3000);
-  }
-}
+

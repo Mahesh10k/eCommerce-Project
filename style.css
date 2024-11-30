@@ -3,11 +3,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-image: url("./images/shopping-bag-cart.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100vw 200vh;
-  background-attachment: fixed;
+  background-color: #D4F6FF !important;
 }
 
 /* Navbar Styling */
@@ -36,15 +32,64 @@ body {
   font-weight: 500;
   color: #00bcd4 !important;
   cursor: pointer;
+  border-bottom: 1px solid #00bcd4 ;
+  width: fit-content;
 }
 .nav-item {
   list-style-type: none;
 }
 
+
 /* Hero Section */
-#home-content {
-  margin-top: 13%;
-  margin-left: 8vw;
+
+section{
+  background-color: white;
+}
+marquee{
+  background-color: white;
+  height: 60px;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  margin-top: -30px;
+}
+marquee>span{
+   padding:30px;
+   color: #00bcd4;
+   font-size: x-large;
+   font-weight: bolder;
+   text-shadow: 2px 2px 3px solid gray;
+}
+.first-section{
+  display: flex;
+  flex-wrap: wrap;
+  gap:5%;
+  margin-top: 5%;
+  justify-content: center;
+}
+.second-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  height: fit-content;
+}
+.second-section>img{
+  width: 80vw;
+  cursor: pointer;
+}
+.second-section>h1{
+  color: #257180;
+  margin-top: 7%;
+  font-weight: bolder;
+}
+#home-content{
+  max-width: 60%;
+}
+#home-content>h3{
+  color: #257180;
+
 }
 #home-content > h1 {
   font-stretch: ultra-expanded;
@@ -63,6 +108,7 @@ body {
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 8%;
 }
 #home-content > button:hover ,#backtoHome:hover{
   color: #257180;
@@ -119,6 +165,10 @@ body {
   font-size: 0.7rem;
   margin-bottom: 10px;
 }
+#card b{
+  font-size: medium;
+}
+
 #card button:hover {
   background-color: #00bcd4;
 }
@@ -131,5 +181,5 @@ footer {
   padding: 10px;
   background-color: #257180;
   color: white;
-  margin-top: 20px;
+  margin-bottom: 0%;
 }

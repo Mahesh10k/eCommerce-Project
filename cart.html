@@ -57,9 +57,9 @@
         // buyNow process
         card.querySelector("#buyNow").addEventListener("click",()=>{
             if(confirm("Are you sure to want to Buy the Item")){
-                alert("Your Order placed Successfully !")
-                card.remove()
-                cartData.splice(index,1)
+                window.location.href="payments.html"
+                // card.remove()
+                // cartData.splice(index,1)
                 if(cartData.length===0){
                     cartContainer.innerHTML="<h3>Your Cart is Empty</h3>"
                 }

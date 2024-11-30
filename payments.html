@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body{
+            background-color: #D4F6FF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+        }
+        h3{
+            color: #00bcd4;
+            font-size: x-large;
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        ul>li{
+            list-style-type: none;
+            font-size: large;
+        }
+        button{
+            color: white;
+            background-color: #257180;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 3%;
+        }
+        button:hover{
+            color: #257180;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h3>Online Payment Options</h3>
+        <ul>
+            <li><input type="radio" name="Payment" > UPI (Pay via any App)</li>
+            <li><input type="radio" name="Payment" > Credit/Debit Card</li>
+            <li><input type="radio" name="Payment" > Pay Later</li>
+            <li><input type="radio" name="Payment" > Wallets</li>
+            <li><input type="radio" name="Payment" > EMI</li>
+            <li><input type="radio" name="Payment" > Net Banking</li>
+        </ul>
+
+        <h3>Pay on Delivery (Cash/UPI)</h3>
+        <ul>
+            <li><input type="radio" name="Payment" >Cash on Delivery</li>
+        </ul>
+
+        <button id="payNow">Pay Now</button>
+
+
+    <script>
+        let payBtn=document.getElementById("payNow")
+        let select=document.getElementsByName("Payment")
+        payBtn.style.display="none"
+        select.forEach(x=>{
+            x.addEventListener("click",()=>{
+            payBtn.style.display="block"
+          })
+        })
+
+
+          
+        payBtn.addEventListener("click",()=>{
+            document.body.style.opacity="0.2"
+            setTimeout(()=>{
+                alert("Order Placed Successfully")
+                window.location.href="cart.html"
+            },2000)
+        })
+    </script>
+</body>
+</html>
