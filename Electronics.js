@@ -7,6 +7,27 @@ document.querySelectorAll(".nav-item").forEach((link) => {
   });
 });
 
+
+//Logout Process
+let Login=document.getElementById("login")
+if(localStorage.getItem("isLoggedIn") === "true"){
+  Login.setAttribute("src","./images/exit.png")
+  Login.id="logout"
+  Login.title="Logout"
+  let Logout=document.getElementById("logout")
+  Logout.addEventListener("click",()=>{
+    if(confirm("Do you want to Logout")){
+      localStorage.setItem("isLoggedIn","false");
+      setTimeout(()=>{
+        alert("You are Logged Out seccesssfully")
+        window.location.href="index.html"
+      },3000)
+      Logout.setAttribute("src","./images/login.png")
+      Logout.title="Login"
+    }
+  })
+}
+
 let Home=document.querySelector("section")
 let productsDiv=document.getElementById("productsDiv")
 

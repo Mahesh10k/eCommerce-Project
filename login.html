@@ -230,6 +230,8 @@
      
 
       if(loginEmail==Email && loginPassword==Password){
+        document.getElementById("loginemail").value=""
+        document.getElementById("loginpassword").value=""
         document.querySelector(".wrapper").style.display="none";
         localStorage.setItem("isLoggedIn", "true");
         setTimeout(()=>{
