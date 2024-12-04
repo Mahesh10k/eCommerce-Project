@@ -13,7 +13,7 @@
     <!-- nav bar section -->
     <nav class="navbar navbar-expand-lg "  style="position: sticky; top: 0px;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="margin-left: 5%; padding:7px 10px;font-weight: 700; color: #257180;" onclick="home()"><img src="./images/E-Box_logo-removebg-preview.png" alt="e-box" height="50px"></a>
+        <a class="navbar-brand" href="#" style="margin:0% 5%; padding:7px 10px;font-weight: 700; color: #257180;" onclick="home()"><img src="./images/E-Box_logo-removebg-preview.png" alt="e-box" height="50px"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -67,30 +67,119 @@
           <h1>E-Box</h1>
           <h3>Bringing the World to Your Doorstep.</h3>
         </div>
-        <img src="./images/home.png" alt="man with mobile" 
-        style="max-width:250px;border-radius: 10px;max-height: 300px;">
+        <img src="./images/home.png" alt="eCommerce Image">
       </div>
 
       <div class="second-section">
-        <h1>Budget Mobiles</h1>
-        <img src="./images/smartphone.webp" alt="Mobiles" id="getMobiles" >
-        <h1>Exclusive Laptops</h1>
-        <img src="./images/laptopspage.webp" alt="Laptops" id="getLaptops" >
-        <h1>Stylish Watches</h1>
-        <img src="./images/swiss-watches-.webp" alt="watches" id="getWatches">
-        <h1>Mens Footwear</h1>
-        <img src="./images/footwear.webp" alt="Footwear" id="getFootwear" >
-        <h1>Mens Clothing</h1>
-        <img src="./images/menswear.jpg" alt="menswear" id="getMensWear" >
+        <div id="getMobiles">
+          <img src="./images/smartphone.webp" alt="Mobiles"  >
+          <div>
+            <h1>Budget Mobiles</h1>
+            <p>Explore the latest smartphones from <b>E-Box</b> featuring advanced technology, powerful processors, and superior camera quality. 
+              Whether you're looking for 5G-ready devices or budget-friendly options, we have something for everyone. Enjoy seamless multitasking, high-speed performance, 
+              and stunning displays with our curated selection from top brands. Shop now and upgrade to a smarter, more connected lifestyle.</p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h1>Exclusive Laptops</h1>
+            <p>Discover high-performance Laptops at <b>E-Box</b>, designed for work, study, and gaming. From ultrabooks to gaming rigs, 
+              our collection offers sleek designs, vibrant visuals, and long-lasting battery life. Choose from trusted brands that deliver lightning-fast processing and reliable performance. 
+              Find the perfect laptop for your needs and enjoy unbeatable deals on the latest models.</p>
+          </div id="getLaptops">
+          <img src="./images/laptopspage.webp" alt="Laptops"  >
+        </div>
+        <div id="getWatches">
+          <img src="./images/swiss-watches-.webp" alt="watches" >
+          <div>
+            <h1>Stylish Watches</h1>
+            <p>Elevate your everyday style with Watches from <b>E-Box</b>. Our collection includes health-tracking smartwatches, 
+              classic analog designs, and feature-packed wearables. Stay connected with GPS, notifications, and fitness monitoring, all while adding a touch of sophistication to your look. 
+              Shop exclusive designs that combine luxury, functionality, and modern trends.</p>
+          </div>
+        </div>
+        <div id="getFootwear" >
+          <div>
+            <h1>Mens Footwear</h1>
+            <p>Step into style with Men's Footwear from <b>E-Box</b>. Whether you need trendy sneakers for casual outings or formal shoes for 
+              professional wear, we’ve got you covered. Our collection promises comfort, durability, and designs for
+               every occasion and season. Upgrade your footwear game with high-quality pairs at attractive prices.</p>
+          </div>
+          <img src="./images/footwear.webp" alt="Footwear" >
+        </div>
+        <div id="getMensWear" >
+          <img src="./images/menswear.jpg" alt="menswear" >
+          <div>
+            <h1>Mens Clothing</h1>
+            <p>Refresh your wardrobe with Menswear from <b>E-Box</b>. From casual wear to formal suits, our collection features trendy designs crafted 
+              from premium fabrics. Enjoy impeccable fits and high-quality clothing that suits all occasions, 
+              from work to weekend outings. Explore the latest fashion trends and redefine your style at prices you’ll love.</p>
+          </div>
+        </div>
       </div>
     </section>
     
     
     <div style="display: flex;flex-wrap: wrap; gap: 20px;justify-content: center;" id="productsDiv"></div>
     
-    <!-- <footer>
-      <p>This Website is Designed and Developed by <br>Mahesh Pikki</p>
-    </footer> -->
+    <!-- footer -->
+    <footer>
+      <div class="main-content">
+        <div class="left box">
+          <h2>About us</h2>
+          <div class="content">
+            <p>Welcome to E-Box, your one-stop destination for all your tech and lifestyle needs! At E-Box, we are committed to bringing you the latest and most innovative products, all under one virtual roof. From cutting-edge mobiles and laptops to stylish watches, trendy footwear, and premium menswear, we have it all.</p>
+            <div class="social">
+              <a href="#"><span class="fab fa-facebook-f"></span></a>
+              <a href="#"><span class="fab fa-twitter"></span></a>
+              <a href="#"><span class="fab fa-instagram"></span></a>
+              <a href="#"><span class="fab fa-youtube"></span></a>
+            </div>
+          </div>
+        </div>
+        <div class="center box">
+          <h2>Address</h2>
+          <div class="content">
+            <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="text">Kukatpally, Hyderabad</span>
+            </div>
+            <div class="phone">
+              <span class="fas fa-phone-alt"></span>
+              <span class="text">+91 6300473738</span>
+            </div>
+            <div class="email">
+              <span class="fas fa-envelope"></span>
+              <span class="text">maheshpikki03@gmail.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="right box">
+          <h2>Contact us</h2>
+          <div class="content">
+            <form action="#">
+              <div class="email">
+                <div class="text">Email *</div>
+                <input type="email" required>
+              </div>
+              <div class="msg">
+                <div class="text">Message *</div>
+                <textarea rows="2" cols="25" required></textarea>
+              </div>
+              <div class="btn">
+                <button type="submit">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <center>
+          <span class="credit">Created By Mahesh Pikki | </span>
+          <span class="far fa-copyright"></span><span> 2024 All rights reserved.</span>
+        </center>
+      </div>
+    </footer>
     
     
     <script src="Electronics.js"></script>

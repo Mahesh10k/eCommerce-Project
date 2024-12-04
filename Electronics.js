@@ -11,7 +11,7 @@ document.querySelectorAll(".nav-item").forEach((link) => {
 //Logout Process
 let Login=document.getElementById("login")
 if(localStorage.getItem("isLoggedIn") === "true"){
-  Login.setAttribute("src","./images/exit.png")
+  Login.setAttribute("src","./images/logout.png")
   Login.id="logout"
   Login.title="Logout"
   let Logout=document.getElementById("logout")
